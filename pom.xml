@@ -54,7 +54,7 @@
                 </configuration>
             </plugin>          
         </plugins>
-        <finalName>apiAssessment</finalName>        
+        <finalName>assessment-api</finalName>        
     </build>       
     
 </project>
