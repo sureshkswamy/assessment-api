@@ -1,18 +1,11 @@
 function fn() {
-  var env = karate.env; // get system property 'karate.env'
-  karate.log('karate.env system property was:', env);
-  if (!env) {
-    env = 'dev';
-  }
-  var config = {
-    env: env,
-    myVarName: 'someValue'
-  }
-  if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
-  }
-  return config;
+  	
+  	var config = {
+   		api_url: 'https://13.57.91.206/CMDB/v1/data/cmdb'
+  	}
+  
+	karate.configure('ssl', true);
+  	karate.configure('headers', {'Content-Type': 'application/json', Accept: 'application/json', Authorization: 'Bearer cwcjPCxJbJwGoEFNoCJr'});
+  	return config;
+	
 }

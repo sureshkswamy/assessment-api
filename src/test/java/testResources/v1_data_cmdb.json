@@ -1,0 +1,18 @@
+{
+    "collectionName": "",
+    "outputFields": [
+        "",
+        ""
+    ],
+    "filter": [
+        {
+            "field": "",
+            "operator": "",
+            "value": ""
+        }
+    ],
+    "page": {
+        "currentPage": ,
+        "itemPerPage": ""
+    }
+}
