@@ -1,21 +1,20 @@
 # author: Suresh Singapuram
 
 
-Feature: TEST - VALIDATE API /v1/data/cmdb (POST) WITH NO API TOKEN
+Feature: TEST - VALIDATE API /v1/data/cmdb (POST) WITH INVALID OUTPUT FIELDS FORMAT
 
 
 Background:
 * url api_url
-* configure headers = { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: '' }
 
 
-Scenario: SUBMIT POST REQUEST WITH NO API TOKEN
+Scenario: SUBMIT POST REQUEST WITH INVALID OUTPUT FIELDS FORMAT
 
 # test data to parameterize request payload
 * set testData
 | path 					| value 								|
 | collectionName 		| 'AWS_CMDB_Output'	 					|
-| outputFields			| [CPU_Cores,sourcetype]   				|
+| outputFields			| '{CPU_Cores,sourcetype}'				|
 | field					| 'CPU_Cores'							|
 | operator				| '='									|
 | value					| 4										|
@@ -39,5 +38,5 @@ Then assert responseStatus > 0
 
 # assertions
 * match responseStatus == 500
-* match response.message == 'Invalid token'
-* match response.errorCode == 401001
+* match response.message == 'Invalid data field'
+* match response.errorCode == 400005

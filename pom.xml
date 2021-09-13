@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
  
     <groupId>com.assessment.api</groupId>
-    <artifactId>apiAssessment</artifactId>
+    <artifactId>assessment-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
  	
@@ -21,7 +21,13 @@
             <artifactId>karate-junit5</artifactId>
             <version>${karate.version}</version>
             <scope>test</scope>
-        </dependency>		
+        </dependency>
+        <dependency>
+		    <groupId>net.masterthought</groupId>
+		    <artifactId>cucumber-reporting</artifactId>
+		    <version>5.3.1</version>
+		    <scope>test</scope>
+		</dependency>	
     </dependencies>
 
     <build>

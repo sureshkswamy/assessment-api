@@ -31,7 +31,6 @@ Scenario: FETCH RAW DATA FROM COLLECTION WITH PAGING - API - /v1/data/cmdb
 # function call to create dynamic payload
 * def requestBody = testFunctions.getRequestBody(payLoad, testData)
 
-
 # execute post request
 Given request requestBody
 When method post
@@ -41,4 +40,8 @@ Then assert responseStatus > 0
 * match responseStatus == 200
 * match response.code == 200
 * match response.page.currentPage == testData.currentPage
-* match response.page.itemPerPage == testData.itemPerPage 
+* match response.page.itemPerPage == testData.itemPerPage
+* match response.page.totalPage == '#notnull'
+* match response.page.totalPage == '#number'
+* match response.page.totalCount == '#notnull'
+* match response.page.totalCount == '#number'
